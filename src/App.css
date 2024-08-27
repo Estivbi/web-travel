@@ -1,38 +1,154 @@
+
+
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column ;
   min-height: 100vh;
+  width: 100%;
+  height: 100%;
+  margin: 0rem;
+  padding: 0;
+  background-color: #dbfae5;
+}
+
+.content {
+  margin-top: 1.5rem;
+}
+
+h1 {
+  font-size: 1.5em;
+  margin: 1rem;
+}
+
+button {
+  margin: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  background-color: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button::before {
+  margin-left: auto;
+}
+
+button::after, button::before {
+  content: '';
+  width: 0%;
+  height: 2px;
+  background: #f44336;
+  display: block;
+  transition: 0.5s;
+}
+
+button:hover::after, button:hover::before {
+  width: 100%;
+  transform: scale(1.05);
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin: 1rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  margin: 2rem auto;
+
+}
+
+.buttons {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-left: 2rem;
+
+}
+
+.map-container {
+  width: 100%;
+  max-width: 800px;
+  height: 80vh;
+  max-height: 600px;
+  position: relative;
+}
+
+.title-container {
+  margin: 2rem;
+  margin-bottom: 2rem;
+  position: relative; 
+  z-index: 1; 
+  background-color: white; 
+  padding: 2rem; 
+  border-radius: 1rem; 
+  box-shadow: 0 0 1rem rgba(15, 15, 15, 0.1); 
+  max-width: 90%;
+}
+
+.header-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 100%;
+  max-width: 1200px;
+  margin: 2rem;
 }
 
-.App-link {
-  color: #61dafb;
+.dark-mode .App {
+  background-color:#2e2e2e;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.dark-mode h1 {
+  color: #e0e0e0;
+}
+
+.dark-mode button {
+  background-color: #444444;
+  color: #e0e0e0;
+
+}
+
+.dark-mode-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: inherit;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+
+  .map-container {
+    width: 90%;
+    max-width: 100%;
+    height: 40vh;
+    max-height: 400px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .buttons button {
+    margin-top: 1rem;
+    width: 100%;
+    max-width: 300px;
   }
+
 }
